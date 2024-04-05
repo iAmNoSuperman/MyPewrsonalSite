@@ -6,9 +6,6 @@ function onSignIn(googleUser) {
     console.log('Email: ' + profile.getEmail());
     // You can use this information to authenticate the user on your server.
 
-    var profile = googleUser.getBasicProfile();
-    var userEmail = profile.getEmail();
-
     // Update the content of the HTML element with id "userEmail"
-    document.getElementById("userEmail").innerText = "Email: " + userEmail;
+    document.getElementById("userEmail").innerText = profile["Email: "];
 }
