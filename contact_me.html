@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+  </head>
+
+  <body>
+    <h3>To contact me use:</h3>
+    <table cellspacing="10">
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td>telephone number</td>
+            </tr>
+            <tr>
+              <td>e-mail</td>
+            </tr>
+            <tr>
+              <td>social media</td>
+            </tr>
+          </table>
+        </td>
+        <td>input_form_copy_here</td>
+      </tr>
+    </table>
+    <hr />
+    <h3>
+      Please mind that the form below does nothing, except it refreshes this
+      page.
+    </h3>
+    <!-- ↓↓↓ the attributes may be changed to:
+        <form action="mailto:destinationmailbox@gmail.com" method="post" enctype="text/plain">,
+    ↓↓↓ hence adding a functional to send an inputed messages to wherever user input was.
+    ↓↓↓ yet I am not a fan of an idea of neither giving my personal email to whatevs nor to install any app -->
+    <form class="" action="contact_me.html" method="post">
+      <label>Your Name:</label>
+      <input type="text" name="senderName" value="" /><br />
+      <label>Your Email:</label>
+      <input type="email" name="senderEmail" value="" /><br />
+      <label for="">Your Message:</label><br />
+      <textarea name="senderMessage" rows="10" cols="30"></textarea><br />
+      <!-- <input type="color" value="" /><br /> -->
+      <!-- <label> Do you want to sign up to the email list?</label>
+        <input type="radio" name="" value=""> -->
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
