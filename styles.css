@@ -7,5 +7,11 @@ h1, h3, a{
 }
 
 hr{
-    border-color: #9DC08B;
+    border-style: none;
+    border-color: #9dc08b;
+    background-color: #40513b;
 }
+
+p{
+    color: #609966;
+  }
