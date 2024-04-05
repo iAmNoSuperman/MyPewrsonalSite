@@ -10,14 +10,21 @@ function onSignIn(googleUser) {
     document.getElementById("userEmail").innerText = "Email: " + profile.getEmail();
 }
 
-function signOut() {
-    var auth2 = google.accounts.id.getAuthInstance();
-    // var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-        console.log('User signed out.');
-        // Hide the logout button
-        document.getElementById("logoutButton").style.display = "none";
-        // Clear the displayed user email
-        document.getElementById("userEmail").innerText = "";
-    });
+// function signOut() {
+//     var auth2 = google.accounts.id.getAuthInstance();
+//     // var auth2 = gapi.auth2.getAuthInstance();
+//     auth2.signOut().then(function () {
+//         console.log('User signed out.');
+//         // Hide the logout button
+//         document.getElementById("logoutButton").style.display = "none";
+//         // Clear the displayed user email
+//         document.getElementById("userEmail").innerText = "";
+//     });
+// }
+
+function signOut(){
+    const button = document.getElementById('signout_button');
+    button.onclick = () => {
+        google.accounts.id.disableAutoSelect();
+    }
 }

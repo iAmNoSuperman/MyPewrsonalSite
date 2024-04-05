@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <script src="script.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="https://accounts.google.com/gsi/client"></script>
-    <meta name="google-signin-client_id" content="419253008915-86nfarsvmrt9h2jrv53394jshtm3t8kv.apps.googleusercontent.com">
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://accounts.google.com/gsi/client"></script> -->
+    <!-- <meta name="google-signin-client_id" content="419253008915-86nfarsvmrt9h2jrv53394jshtm3t8kv.apps.googleusercontent.com"> -->
     <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -69,12 +69,20 @@
       <tfoot>
       </tfoot>
     </table>
-    <!-- Google Sign-In button -->
-    <div class="g-signin2" data-onsuccess="onSignIn">Sign-in with Google</div>
+    <!-- Google Sign-In button
+    <div class="g-signin2" data-onsuccess="onSignIn">Sign-in with Google</div> -->
     <!-- Logout button -->
-    <!-- <button id="logoutButton" style="display: none;" onclick="signOut()">Sign out</button> -->
-    <a href="#" onclick="signOut();">Sign out</a>
+    <button id="logoutButton" style="display: none;" onclick="signOut()">Sign out</button>
+    <!-- <a href="#" onclick="signOut();">Sign out</a> -->
     <!-- Display user email -->
-    <div id="userEmail"></div>
+    <!-- <div id="userEmail"></div> -->
+    <div id="g_id_onload"
+     data-client_id="419253008915-86nfarsvmrt9h2jrv53394jshtm3t8kv.apps.googleusercontent.com"
+     data-login_uri="https://iamnosuperman.github.io/MyPewrsonalSite/"
+     data-your_own_param_1_to_login="any_value"
+     data-your_own_param_2_to_login="any_value">
+    </div>
+    <div class="g_id_signout">Sign Out</div>
+    <button id="sugnout_button" style="display: none;" onclick="signOut()">Sign out</button>
   </body>
 </html>
