@@ -68,7 +68,14 @@
       <tfoot>
       </tfoot>
     </table>
+    <!-- Google Sign-In button -->
     <div class="g-signin2" data-onsuccess="onSignIn">Sign-in with Google</div>
+    <!-- Logout button -->
+    <button id="logoutButton" style="display: none;" onclick="signOut()">Sign out</button>
+    <!-- Display user email -->
     <div id="userEmail"></div>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="script.js"></script>
   </body>
 </html>
