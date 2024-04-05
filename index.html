@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="419253008915-86nfarsvmrt9h2jrv53394jshtm3t8kv.apps.googleusercontent.com">
     <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -78,9 +80,11 @@
         <tr>
           <td><a href="hobbies.html">To view my hobbies click here</a></td>
           <td><a href="contact_me.html">To contact me click here</a></td>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </tr>
       </tbody>
       <tfoot></tfoot>
     </table>
+    <script src="script.js"></script>
   </body>
 </html>
