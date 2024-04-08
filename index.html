@@ -28,6 +28,7 @@
           document.getElementById('profile').innerHTML = 
           `Welcome, + ${user.name} with email ${user.email}<br><br>`;
           document.getElementById('signout-button').style.display='inline';
+          document.getElementById('login-button').style.display='none';
         }
         else {
           document.getElementById('login-button').style.display='inline';
@@ -115,7 +116,7 @@
     <!-- <div id="userEmail"></div> -->
 
     <!-- Метод 2 рабочий!-->
-    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
     <div id="g_id_onload"
      data-client_id="419253008915-86nfarsvmrt9h2jrv53394jshtm3t8kv.apps.googleusercontent.com"
      data-auto-prompt="true">
@@ -127,9 +128,9 @@
     data-text="sign_in_with"
     data-shape="rectangular"
     data-logo_alignment="left">
-    </div> -->
+    </div> 
     <p id="profile"></p>
-    <button id="login-button" style="display: none;" onclick="handleCredentialsResponse()">Login</button>
+    <button id="login-button" style="display: inline;" onclick="handleCredentialsResponse()">Login</button>
     <button id="signout-button" style="display: none;" onclick="signOut()">Logout</button>
   </body>
 </html>
