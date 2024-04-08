@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elena's Personal Site</title>
 
-    <!-- Метод 3 пробный -->
+    <!-- Метод 3 пробный. Должен запускаться автоматом. Работает логаут, не работает логин -_- -->
     <script src="https://accounts.google.com/gsi/client" async></script>
 
   </head>
@@ -37,7 +37,7 @@
 
       function init(){
         google.accounts.id.initialize({
-          client_id:"419253008915-86nfarsvmrt9h2jrv53394jshtm3t8kv.apps.googleusercontent.com",
+          client_id:"747975390768-asf7en8mfgotcq2t7tsvglai0arri3gr.apps.googleusercontent.com",
           auto_select: true,
           callback: handleCredentialsResponse
         });
@@ -115,10 +115,10 @@
     <!-- Display user email -->
     <!-- <div id="userEmail"></div> -->
 
-    <!-- Метод 2 рабочий!-->
+    <!-- Метод 2 рабочий! Это визуально кнопка гугла. Работает логин, не запилен логаут-->
     <!-- <script src="https://accounts.google.com/gsi/client" async></script> -->
     <div id="g_id_onload"
-     data-client_id="419253008915-86nfarsvmrt9h2jrv53394jshtm3t8kv.apps.googleusercontent.com"
+     data-client_id="747975390768-asf7en8mfgotcq2t7tsvglai0arri3gr.apps.googleusercontent.com"
      data-auto-prompt="true">
     </div>
     <div class="g_id_signin"
@@ -129,6 +129,7 @@
     data-shape="rectangular"
     data-logo_alignment="left">
     </div> 
+    
     <p id="profile"></p>
     <button id="login-button" style="display: inline;" onclick="init()">Login</button>
     <button id="signout-button" style="display: none;" onclick="signOut()">Logout</button>
