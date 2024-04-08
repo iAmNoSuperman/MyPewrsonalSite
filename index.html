@@ -13,6 +13,8 @@
     <!-- Метод 3 пробный -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
+  </head>
+  
     <script>
       function handleCredentialsResponse(response) {
         console.log(response)
@@ -24,7 +26,7 @@
           console.log(user);
 
           document.getElementById('profile').innerHTML = 
-          'Welcome,+ ${user.name} with email ${user.email}<br><br>';
+          `Welcome, + ${user.name} with email ${user.email}<br><br>`;
           document.getElementById('signout-button').style.display='inline';
         }
         else {
@@ -48,8 +50,6 @@
         document.getElementById('signout-button').style.display="none";
 }
     </script>
-
-  </head>
 
   <body onload="init()">
     <table cellspacing="20">
@@ -129,7 +129,7 @@
     data-logo_alignment="left">
     </div> -->
     <p id="profile"></p>
-    <!-- <button id="login-button" style="display: none;" onclick="handleCredentialsResponse()">Login</button> -->
+    <button id="login-button" style="display: none;" onclick="handleCredentialsResponse()">Login</button>
     <button id="signout-button" style="display: none;" onclick="signOut()">Logout</button>
   </body>
 </html>
