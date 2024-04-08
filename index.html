@@ -10,10 +10,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elena's Personal Site</title>
 
+    <!-- Метод 3 пробный -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <script>
+      function handleCredentialsResponse(response) {
+        console.log(response)
+        if (response.credential){
+          // The user is logged in.
+          // Decode the JWT token and getting user's information:
+          let jwt = response.credential;
+          let user = JSON.parse(atob(jwt.split('.')[1]));
+          console.log(user);
+
+          document.getElementById('profile').innerHTML += 
+          'Welcome, " + ${user.name} with email ${user.email}<br><br>';
+          document.getElementById('signout-button').style.display='inline';
+        }
+        else {
+          document.getElementById('login-button').style.display='inline';
+        }
+      }
+
+      function init(){
+        google.accounts.id.initialize({
+          client_id:"419253008915-86nfarsvmrt9h2jrv53394jshtm3t8kv.apps.googleusercontent.com",
+          auto_select: true,
+          callback: handleCredentialsResponse
+        });
+        google.accounts.id.prompt();
+      }
+
+      function signOut(){
+        google.accounts.id.disableAutoSelect();
+        google.accounts.id.prompt();
+        // document.getElementById('profile').innerHTML=""
+        document.getElementById('signout-button').style.display="none";
+}
+    </script>
 
   </head>
 
-  <body>
+  <body onload="init()">
     <table cellspacing="20">
       <tr>
         <td><img src="shade_ardu_circle.png" /></td>
@@ -77,11 +115,10 @@
     <!-- <div id="userEmail"></div> -->
 
     <!-- Метод 2 рабочий!-->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script>
     <div id="g_id_onload"
      data-client_id="419253008915-86nfarsvmrt9h2jrv53394jshtm3t8kv.apps.googleusercontent.com"
-     data-auto-prompt="false"
-     onclick="handleCredentialsResponse">
+     data-auto-prompt="true">
     </div>
     <div class="g_id_signin"
     data-type="standard"
@@ -90,47 +127,8 @@
     data-text="sign_in_with"
     data-shape="rectangular"
     data-logo_alignment="left">
-    </div>
+    </div> -->
 
-
-    <!-- Метод 3 пробный -->
-    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
-
-    <script>
-      function handleCredentialsResponse(response) {
-        console.log(response)
-        if (response.credential){
-          // The user is logged in.
-          // Decode the JWT token and getting user's information:
-          let jwt = response.credential;
-          let user = JSON.parse(atob(jwt.split('.')[1]));
-          console.log(user);
-
-          document.getElementById('profile').innerHTML += 
-          'Welcome, " + ${user.name} with email ${user.email}<br><br>';
-          document.getElementById('signout-button').style.display='inline';
-        }
-        else {
-          document.getElementById('login-button').style.display='inline';
-        }
-      }
-
-      function init(){
-        google.accounts.id.initialize({
-          client_id:"419253008915-86nfarsvmrt9h2jrv53394jshtm3t8kv.apps.googleusercontent.com",
-          auto_select: true,
-          callback: handleCredentialsResponse
-        });
-        google.accounts.id.prompt();
-      }
-
-      function signOut(){
-        google.accounts.id.disableAutoSelect();
-        google.accounts.id.prompt();
-        // document.getElementById('profile').innerHTML=""
-        document.getElementById('signout-button').style.display="none";
-}
-    </script>
     <button id="signout-button" style="display: none;" onclick="signOut()">Sign out</button>
   </body>
 </html>
