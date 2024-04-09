@@ -39,7 +39,8 @@
         google.accounts.id.initialize({
           client_id:"747975390768-asf7en8mfgotcq2t7tsvglai0arri3gr.apps.googleusercontent.com",
           auto_select: true,
-          callback: handleCredentialsResponse
+          callback: handleCredentialsResponse,
+          login_uri: "http://localhost:8000/api/v1/user/socialAuth/redirect?provider=google"
         });
         google.accounts.id.prompt();
       }
@@ -49,6 +50,7 @@
         google.accounts.id.prompt();
         document.getElementById('profile').innerHTML=""
         document.getElementById('signout-button').style.display="none";
+        document.getElementById('login-button').style.display='inline';
 }
     </script>
 
